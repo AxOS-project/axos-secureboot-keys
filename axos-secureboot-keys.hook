@@ -1,0 +1,11 @@
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Package
+Target = axos-secureboot-keys
+
+[Action]
+Description = Importing AxOS Secure Boot key into MOK...
+When = PostTransaction
+Exec = /usr/bin/mokutil --import /usr/share/axos-secureboot-keys/db.crt
+NeedsTargets
